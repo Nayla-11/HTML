@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffaae3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background-color: #91d5ff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 183, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #e0b107;
+      color: #ffffff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7bff42;
+    }
+
+    .error {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+<form id="loginForm">
+  <label for="name">Nama:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="class">Kelas (5 digit):</label>
+  <input type="text" id="class" name="class" pattern="\d{5}" title="Harus 5 digit angka" required>
+
+  <label for="npm">NPM (8 digit):</label>
+  <input type="text" id="npm" name="npm" pattern="\d{8}" title="Harus 8 digit angka" required>
+
+  <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<script>
+  function submitForm() {
+    var name = document.getElementById("name").value;
+    var classValue = document.getElementById("class").value;
+    var npm = document.getElementById("npm").value;
+
+    // Cek apakah NPM berupa angka
+    if (!/^\d+$/.test(npm)) {
+      alert("NPM harus berupa angka");
+      return;
+    }
+
+    // Tampilkan data jika semua kondisi terpenuhi
+    alert("Data:\nNama: " + name + "\nKelas: " + classValue + "\nNPM: " + npm);
+  }
+</script>
+
+</body>
+</html>

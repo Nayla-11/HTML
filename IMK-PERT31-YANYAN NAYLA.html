@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Informasi Mahasiswa</title>
+    <h1>Informasi Mahasiswa</h1>
+    <h2>Universitas Gunadarma</h2>
+
+    <style>
+        body {
+            background-color: rgb(14, 132, 186);
+            font-family: Times New Roman, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid black;
+            font-family: Arial, sans-serif;
+            background-color: rgb(178, 212, 255);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            color: black;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: rgb(255, 187, 229);
+            color: rgb(12, 11, 11);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Styling for confirmation message */
+        #confirmation-message {
+            background-color: rgb(220, 246, 220);
+            color: rgb(12, 11, 11);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="inputForm" onsubmit="return displayConfirmation()">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="npm">NPM</label>
+        <input type="text" id="npm" name="npm" required>
+
+        <label for="kelas">Kelas</label>
+        <input type="text" id="kelas" name="kelas" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="confirmation-message"></div>
+
+    <script>
+        function displayConfirmation() {
+            var nama = document.getElementById('nama').value;
+            var npm = document.getElementById('npm').value;
+            var kelas = document.getElementById('kelas').value;
+
+            var confirmationMessage = "Data yang anda masukkan:<br> Nama: " + nama + "<br> NPM: " + npm + "<br> Kelas: " + kelas;
+
+            document.getElementById('confirmation-message').innerHTML = confirmationMessage;
+
+            // Prevent the form from submitting (which would cause a page reload)
+            return false;
+        }
+    </script>
+</body>
+</html>

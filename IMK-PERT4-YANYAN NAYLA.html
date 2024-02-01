@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Gallery</title>
+</head>
+<body>
+    <div class="gallery-container">
+        <img src="SAKURA.jpg" alt="Image 1" class="custom-size-1">
+        <img src="DANDELIONN1.jpg" alt="Image 2" class="custom-size-2">
+        <img src="EDELWEISSS.jpeg" alt="Image 3" class="custom-size-3">
+        <!-- Add more images as needed -->
+    </div>
+
+    <script>
+        window.onresize = function () {
+            var galleryContainer = document.querySelector('.gallery-container');
+            if (window.innerWidth > 768) { 
+                galleryContainer.style.width = '25%';
+                galleryContainer.style.width = '50%';
+            } else {
+                galleryContainer.style.width = '100%';
+            }
+        };
+
+        // Initial check on page load
+        window.onload = function () {
+            var galleryContainer = document.querySelector('.gallery-container');
+            if (window.innerWidth > 768) {
+                galleryContainer.style.width = '50%';
+            } else {
+                galleryContainer.style.width = '100%';
+            }
+        };
+    </script>
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .custom-size-1 {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .custom-size-2 {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .custom-size-3 {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+</style>

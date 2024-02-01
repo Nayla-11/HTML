@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mahasiswa</title>
+</head>
+<body style="background-color: rgb(120, 239, 255);">
+    <form id="myForm" style="text-align: center; background-color: rgb(255, 176, 221); border-style: solid; border-color: rgb(255, 0, 85); width: 50%; max-width: 500px; margin: auto; padding: 20px;">
+        <label><h3><strong>NAMA</strong></h3></label><br>
+        <input type="text" id="nama" name="nama"><br><br>
+
+        <label><h3><strong>NPM</strong></h3></label><br>
+        <input type="text" id="npm" name="npm"><br><br>
+
+        <label><h3><strong>KELAS</strong></h3></label><br>
+        <input type="text" id="kelas" name="kelas"><br><br>
+
+        <label><h4><strong>PESAN</strong></h4></label><br>
+        <textarea id="pesan" name="pesan" rows="10" cols="40"></textarea><br><br>
+
+        <button type="button" onclick="Data()">Submit</button>
+    </form>
+
+    <script>
+        function Data() {
+            var nama = document.getElementById('nama').value;
+            var npm = document.getElementById('npm').value;
+            var kelas = document.getElementById('kelas').value;
+            var pesan = document.getElementById('pesan').value;
+            var hasilAlert = 
+                'Nama: ' + nama + '\n' +
+                'NPM: ' + npm + '\n' +
+                'Kelas: ' + kelas + '\n' +
+                'Pesan: ' + pesan;
+            alert(hasilAlert);
+        }
+    </script>
+</body>
+</html>
